@@ -1,8 +1,6 @@
 package tests;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.logevents.SelenideLogger;
-import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,18 +9,17 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
 
-public class SelenideTest {
+public class SelenideTest extends TestBase {
 
-    @DisplayName("Проверка наличие Issue с текстом: Kotlin")
     @Test
+    @DisplayName("Проверка наличия Issue с текстом: Kotlin")
     public void testIssueSearch() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
 
-        open(TestData.BASE_URL);
+        open(BASE_URL);
         $("[placeholder='Search or jump to...']").click();
-        $("#query-builder-test").setValue(TestData.REPO).pressEnter();
-        $(linkText(TestData.REPO_FULL_NAME)).click();
+        $("#query-builder-test").setValue(REPO).pressEnter();
+        $(linkText(REPO_FULL_NAME)).click();
         $("#issues-tab").click();
-        $(withText(TestData.ISSUE_TEXT)).should(Condition.exist);
+        $(withText(ISSUE_TEXT)).should(Condition.exist);
     }
 }

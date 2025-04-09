@@ -1,0 +1,1 @@
+{"uuid":"7d98fe0a-306e-4d0c-b61b-9c3dc35b9eb6","name":"Проверка наличие Issue с текстом: Kotlin","children":["597d1084-a31f-43b8-963a-2673c20d3d90"],"befores":[{"name":"beforeEach","status":"passed","stage":"finished","steps":[],"attachments":[],"parameters":[],"start":1744178108451,"stop":1744178108452}],"afters":[],"start":1744178108447,"stop":1744178113922}
